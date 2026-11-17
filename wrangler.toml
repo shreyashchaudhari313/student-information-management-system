@@ -1,6 +1,7 @@
 name = "student-information-management-system"
 main = "worker.js"
-compatibility_date = "2026-11-17"
+compatibility_date = "2024-09-23"
+workers_dev = true
 
 [assets]
 directory = "./frontend/dist"
