@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: campus-desk-api
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+      - NODE_ENV=production
+      - MONGODB_URI=mongodb+srv://newuser:shreyass1234@cluster0.ybz8bqf.mongodb.net/studentDB?retryWrites=true&w=majority
+      - FRONTEND_URL=http://localhost:5173,http://localhost:3000,https://campus-desk-sis-shreyas-3451.vercel.app,https://campus-desk-sis-v2-shreyas-3451.vercel.app
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: campus-desk-ui
+    ports:
+      - "3000:80"
+    environment:
+      - VITE_API_URL=http://localhost:5000
+    depends_on:
+      - backend
+    restart: unless-stopped
