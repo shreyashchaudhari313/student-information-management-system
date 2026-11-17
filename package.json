@@ -12,7 +12,6 @@
     "start": "npm run start --workspace=backend"
   },
   "devDependencies": {
-    "concurrently": "^9.1.2",
-    "wrangler": "^3.109.2"
+    "concurrently": "^9.1.2"
   }
 }
