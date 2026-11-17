@@ -1,0 +1,9 @@
+name = "student-information-management-system"
+main = "worker.js"
+compatibility_date = "2026-11-17"
+
+[assets]
+directory = "./frontend/dist"
+binding = "ASSETS"
+html_handling = "auto-trailing-slash"
+not_found_handling = "single-page-application"
